@@ -1,0 +1,8 @@
+__pycache__/
+*.pyc
+.pytest_cache/
+data/*.db
+existing/data/history.csv
+existing/data/app.log
+static/exports/*
+.env

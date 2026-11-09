@@ -1,0 +1,10 @@
+__pycache__/
+*.pyc
+data/history.csv
+data/exported_passwords.txt
+data/exported_passwords.csv
+data/app.log
+.venv/
+venv/
+.idea/
+.vscode/

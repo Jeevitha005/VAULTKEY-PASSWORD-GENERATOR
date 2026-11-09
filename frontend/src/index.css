@@ -1,0 +1,63 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    @apply scroll-smooth;
+  }
+
+  body {
+    @apply font-body bg-white text-vault-950 dark:bg-vault-950 dark:text-slate-100 antialiased transition-colors duration-300;
+  }
+
+  ::selection {
+    @apply bg-accent-violet/40 text-inherit;
+  }
+
+  *:focus-visible {
+    @apply outline-none ring-2 ring-accent-violet ring-offset-2 ring-offset-transparent;
+  }
+
+  ::-webkit-scrollbar {
+    width: 10px;
+  }
+
+  ::-webkit-scrollbar-track {
+    @apply bg-transparent;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply bg-vault-700/60 rounded-full;
+  }
+}
+
+@layer components {
+  .glass-panel {
+    @apply bg-white/70 dark:bg-white/[0.06] backdrop-blur-xl border border-white/40 dark:border-white/10 shadow-glass rounded-3xl;
+  }
+
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 rounded-2xl px-5 py-3 font-display font-semibold text-white
+      bg-gradient-to-br from-accent-violet to-accent-cyan shadow-glow-violet
+      transition-transform duration-200 hover:scale-[1.02] active:scale-[0.98]
+      disabled:opacity-50 disabled:pointer-events-none;
+  }
+
+  .btn-secondary {
+    @apply inline-flex items-center justify-center gap-2 rounded-2xl px-4 py-2.5 font-medium
+      bg-vault-950/5 dark:bg-white/5 border border-vault-950/10 dark:border-white/10
+      text-vault-950 dark:text-slate-100 transition-colors duration-200
+      hover:bg-vault-950/10 dark:hover:bg-white/10;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+}
